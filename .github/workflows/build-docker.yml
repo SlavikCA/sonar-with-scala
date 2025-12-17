@@ -28,4 +28,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository }}:${{ steps.version.outputs.value }}
+          tags: ghcr.io/${{ toLowerCase(github.repository) }}:${{ steps.version.outputs.value }}
