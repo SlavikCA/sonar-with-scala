@@ -28,4 +28,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/slavikca:${{ steps.version.outputs.value }}
+          tags: ghcr.io/slavikca/sonar-with-scala:${{ steps.version.outputs.value }}
