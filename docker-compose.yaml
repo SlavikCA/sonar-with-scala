@@ -1,0 +1,19 @@
+services:
+  sonar9:
+    image: ghcr.io/slavikca/sonar-with-scala:9.9.1
+    container_name: sonar9
+    ports:
+      - "9000:9000"
+    volumes:
+      - /opt/sonar/data:/opt/sonarqube/data:Z
+      - /opt/sonar/logs:/opt/sonarqube/logs:Z
+      - /opt/sonar/bundled-plugins:/opt/sonarqube/lib/bundled-plugins:Z
+    environment:
+      SONAR_JDBC_URL: "jdbc:oracle:thin:*****"
+      SONAR_JDBC_USERNAME: "sonarqube"
+      SONAR_JDBC_PASSWORD: "*****"
+      # HTTP_PROXYHOST: "proxy.internal"
+      # HTTP_PROXYPORT: "8080"
+      # HTTPS_PROXYHOST: "proxy.internal"
+      # HTTPS_PROXYPORT: "8080"
+    restart: unless-stopped
